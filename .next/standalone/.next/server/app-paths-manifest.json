@@ -1,0 +1,8 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/experience/page": "app/experience/page.js",
+  "/page": "app/page.js",
+  "/posts/page": "app/posts/page.js"
+}
