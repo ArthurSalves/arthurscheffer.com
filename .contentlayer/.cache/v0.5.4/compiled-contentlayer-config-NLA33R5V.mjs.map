@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../contentlayer.config.ts"],
-  "sourcesContent": ["\nimport { defineDocumentType, makeSource } from 'contentlayer2/source-files'\n\n\nexport const Experience = defineDocumentType(() => ({\n  name: 'Experience',\n  filePathPattern: `**/*.mdx`,\n  contentType: \"mdx\",\n  fields: {\n    companyName: { type: 'string', required: true },\n    employmentType: {type : 'string', required: true }, \n    position: { type: 'string', required: true },\n    startedAt: { type: 'date', required: true },\n    endedAt: { type: 'date' },\n    skills: { type: 'list', required: true, of: { type: \"string\" }}\n  },\n}))\n\n\n\nexport default makeSource({ contentDirPath: './src/data', documentTypes: [Experience] })"],
-  "mappings": ";AACA,SAAS,oBAAoB,kBAAkB;AAGxC,IAAM,aAAa,mBAAmB,OAAO;AAAA,EAClD,MAAM;AAAA,EACN,iBAAiB;AAAA,EACjB,aAAa;AAAA,EACb,QAAQ;AAAA,IACN,aAAa,EAAE,MAAM,UAAU,UAAU,KAAK;AAAA,IAC9C,gBAAgB,EAAC,MAAO,UAAU,UAAU,KAAK;AAAA,IACjD,UAAU,EAAE,MAAM,UAAU,UAAU,KAAK;AAAA,IAC3C,WAAW,EAAE,MAAM,QAAQ,UAAU,KAAK;AAAA,IAC1C,SAAS,EAAE,MAAM,OAAO;AAAA,IACxB,QAAQ,EAAE,MAAM,QAAQ,UAAU,MAAM,IAAI,EAAE,MAAM,SAAS,EAAC;AAAA,EAChE;AACF,EAAE;AAIF,IAAO,8BAAQ,WAAW,EAAE,gBAAgB,cAAc,eAAe,CAAC,UAAU,EAAE,CAAC;",
-  "names": []
-}
