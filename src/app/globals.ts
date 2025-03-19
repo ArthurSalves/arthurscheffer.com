@@ -30,7 +30,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
 	font-family: Arial;
 	background-color: rgb(13, 13, 13);
-	
   }
   
 
