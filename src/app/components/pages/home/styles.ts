@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface AboutContainerStyledProps {
-    angle: number;
+    angle: number
 }
 
 export const NavBarStyled = styled.nav`
     height: 90px;
     display: flex;
     align-items: center;
-`;
+`
 
 export const ImageContainerStyled = styled.div`
     > img {
@@ -16,12 +16,12 @@ export const ImageContainerStyled = styled.div`
         margin-bottom: 35px;
         box-shadow: rgba(255, 153, 0, 0.2) 0px 20px 35px;
     }
-`;
+`
 
-export const AboutContainerStyled = styled.div.attrs<AboutContainerStyledProps>((props) => ({
-  style: {
-    backgroundImage: `linear-gradient(${props.angle}deg, rgb(255, 255, 247) 1%, rgb(114, 114, 103) 107%)`,
-  },
+export const AboutContainerStyled = styled.div.attrs<AboutContainerStyledProps>(props => ({
+    style: {
+        backgroundImage: `linear-gradient(${props.angle}deg, rgb(255, 255, 247) 1%, rgb(114, 114, 103) 107%)`
+    }
 }))<AboutContainerStyledProps>`
     margin-top: 35px;
     width: 60%;
@@ -35,8 +35,7 @@ export const AboutContainerStyled = styled.div.attrs<AboutContainerStyledProps>(
     @media (max-width: 768px) {
         width: 100%;
     }
-
-`;
+`
 
 export const TitleAboutStyled = styled.div`
     display: flex;
@@ -54,30 +53,19 @@ export const TitleAboutStyled = styled.div`
         align-items: center;
         justify-content: center;
         position: relative;
-        
 
         @media (max-width: 768px) {
             top: -15px;
             text-align: left;
             align-items: flex-start;
         }
-        
     }
 
     @media (max-width: 768px) {
         font-size: 35px;
         align-items: flex-start;
     }
-
-    @keyframes Typewriter-cursor { 
-        0% { opacity:1; } 
-        100% { opacity:0; }
-    }
-
-    > span {
-        animation: Typewriter-cursor 1s infinite;
-    }
-`;
+`
 
 export const TextContainerStyled = styled.div`
     display: flex;
@@ -87,8 +75,7 @@ export const TextContainerStyled = styled.div`
     @media (max-width: 768px) {
         align-items: flex-start;
     }
-
-`;
+`
 
 export const DescriptionAboutSytled = styled.h1`
     text-align: center;
@@ -98,5 +85,4 @@ export const DescriptionAboutSytled = styled.h1`
         align-items: flex-start;
         text-align: left;
     }
-
-`;
+`

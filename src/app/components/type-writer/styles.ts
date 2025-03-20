@@ -1,5 +1,18 @@
 import styled from 'styled-components'
+import { keyframes } from 'styled-components'
 
+interface TypeWriterStyled {
+    isTyping: boolean
+}
+
+const typewriterCursor = keyframes`
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+`
 
 export const TypeWriterStyled = styled.div`
     display: flex;
@@ -10,7 +23,6 @@ export const TypeWriterStyled = styled.div`
     word-break: keep-all;
     @media (max-width: 768px) {
         text-align: left;
-
     }
 
     > img {
@@ -18,27 +30,24 @@ export const TypeWriterStyled = styled.div`
         align-items: center;
         justify-content: center;
         position: relative;
-        
 
         @media (max-width: 768px) {
             top: -15px;
             text-align: left;
             align-items: flex-start;
         }
-        
     }
 
     @media (max-width: 768px) {
         font-size: 35px;
         align-items: flex-start;
     }
-
-    @keyframes Typewriter-cursor { 
-        0% { opacity:1; } 
-        100% { opacity:0; }
-    }
-
-    > span {
-        animation: Typewriter-cursor 1s infinite;
-    }
+`
+export const BlinkingPipeStyled = styled.span<TypeWriterStyled>`
+    display: inline-block;
+    opacity: 1;
+    animation-name: ${props => (props.isTyping ? null : typewriterCursor)};
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    -webkit-text-fill-color: initial;
 `
