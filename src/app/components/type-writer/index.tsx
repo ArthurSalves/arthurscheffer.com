@@ -1,12 +1,13 @@
 import { useTypeWriter } from '@/hooks/type-writer'
-import { TypeWriterStyled } from './styles'
+import { BlinkingPipeStyled, TypeWriterStyled } from './styles'
 import React from 'react'
 
 const TypeWriter: React.FC = () => {
     const testes = ['Software Engineer', 'Innovative Problem Solver', 'AWS Serveless']
     return (
         <TypeWriterStyled>
-            {useTypeWriter(testes)} <span>|</span>
+            {useTypeWriter(testes).phraseDisplayed}{' '}
+            <BlinkingPipeStyled isTyping={useTypeWriter(testes).isTyping}>|</BlinkingPipeStyled>
         </TypeWriterStyled>
     )
 }

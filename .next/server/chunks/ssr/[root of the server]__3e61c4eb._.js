@@ -57,9 +57,7 @@ const GlobalStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
     min-height: 100%;
 	color: white;
     width: 100%;
-	font-family: Arial;
 	background-color: rgb(13, 13, 13);
-	
   }
   
 

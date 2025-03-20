@@ -146,7 +146,6 @@ const AboutContainerStyled = __TURBOPACK__imported__module__$5b$project$5d2f$nod
     @media (max-width: 768px) {
         width: 100%;
     }
-
 `;
 const TitleAboutStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div.withConfig({
     displayName: "styles__TitleAboutStyled",
@@ -167,28 +166,17 @@ const TitleAboutStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         align-items: center;
         justify-content: center;
         position: relative;
-        
 
         @media (max-width: 768px) {
             top: -15px;
             text-align: left;
             align-items: flex-start;
         }
-        
     }
 
     @media (max-width: 768px) {
         font-size: 35px;
         align-items: flex-start;
-    }
-
-    @keyframes Typewriter-cursor { 
-        0% { opacity:1; } 
-        100% { opacity:0; }
-    }
-
-    > span {
-        animation: Typewriter-cursor 1s infinite;
     }
 `;
 const TextContainerStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div.withConfig({
@@ -202,7 +190,6 @@ const TextContainerStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node
     @media (max-width: 768px) {
         align-items: flex-start;
     }
-
 `;
 const DescriptionAboutSytled = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].h1.withConfig({
     displayName: "styles__DescriptionAboutSytled",
@@ -215,7 +202,6 @@ const DescriptionAboutSytled = __TURBOPACK__imported__module__$5b$project$5d2f$n
         align-items: flex-start;
         text-align: left;
     }
-
 `;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
@@ -694,6 +680,7 @@ var _s = __turbopack_context__.k.signature();
 function useTypeWriter(phrases) {
     _s();
     const [phraseDisplayed, setPhraseDisplayed] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(phrases[0]);
+    const [isTyping, setIsTyping] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const stateRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])({
         isDeleting: false,
         actualIndexPhrase: 0
@@ -708,11 +695,13 @@ function useTypeWriter(phrases) {
                 };
             }
             function typeCharacter() {
+                setIsTyping(true);
                 setPhraseDisplayed({
                     "useTypeWriter.useEffect.typeCharacter": (prevText)=>prevText + actualPhrase[phraseDisplayed.length]
                 }["useTypeWriter.useEffect.typeCharacter"]);
             }
             function removeCharacter() {
+                setIsTyping(true);
                 const nextText = phraseDisplayed.slice(0, -1);
                 setPhraseDisplayed(nextText);
                 nextPhrases(nextText);
@@ -729,6 +718,7 @@ function useTypeWriter(phrases) {
             if (!stateRef.current.isDeleting && phraseDisplayed !== actualPhrase) {
                 setTimeout(typeCharacter, 150);
             } else if (phraseDisplayed !== '') {
+                setIsTyping(false);
                 const timeToRemove = phraseDisplayed === actualPhrase ? 2000 : 50;
                 setTimeout(removeCharacter, timeToRemove);
             }
@@ -736,9 +726,12 @@ function useTypeWriter(phrases) {
     }["useTypeWriter.useEffect"], [
         phraseDisplayed
     ]);
-    return phraseDisplayed;
+    return {
+        phraseDisplayed,
+        isTyping: isTyping
+    };
 }
-_s(useTypeWriter, "t+pzly4RRcQo0lIc0KJIHd/HEA4=");
+_s(useTypeWriter, "5zPoYnHOdkA3/t8ssYc2GvMIXhA=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -749,10 +742,20 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { g: global, d: __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "BlinkingPipeStyled": (()=>BlinkingPipeStyled),
     "TypeWriterStyled": (()=>TypeWriterStyled)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-components/dist/styled-components.browser.esm.js [app-client] (ecmascript)");
 ;
+;
+const typewriterCursor = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+`;
 const TypeWriterStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].div.withConfig({
     displayName: "styles__TypeWriterStyled",
     componentId: "sc-d8f18a83-0"
@@ -765,7 +768,6 @@ const TypeWriterStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
     word-break: keep-all;
     @media (max-width: 768px) {
         text-align: left;
-
     }
 
     > img {
@@ -773,29 +775,29 @@ const TypeWriterStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         align-items: center;
         justify-content: center;
         position: relative;
-        
 
         @media (max-width: 768px) {
             top: -15px;
             text-align: left;
             align-items: flex-start;
         }
-        
     }
 
     @media (max-width: 768px) {
         font-size: 35px;
         align-items: flex-start;
     }
-
-    @keyframes Typewriter-cursor { 
-        0% { opacity:1; } 
-        100% { opacity:0; }
-    }
-
-    > span {
-        animation: Typewriter-cursor 1s infinite;
-    }
+`;
+const BlinkingPipeStyled = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$components$2f$dist$2f$styled$2d$components$2e$browser$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].span.withConfig({
+    displayName: "styles__BlinkingPipeStyled",
+    componentId: "sc-d8f18a83-1"
+})`
+    display: inline-block;
+    opacity: 1;
+    animation-name: ${(props)=>props.isTyping ? null : typewriterCursor};
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    -webkit-text-fill-color: initial;
 `;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
@@ -825,14 +827,15 @@ const TypeWriter = ()=>{
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$type$2d$writer$2f$styles$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TypeWriterStyled"], {
         children: [
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$type$2d$writer$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"])(testes),
-            " ",
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$type$2d$writer$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"])(testes).phraseDisplayed,
+            ' ',
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$type$2d$writer$2f$styles$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BlinkingPipeStyled"], {
+                isTyping: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$type$2d$writer$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"])(testes).isTyping,
                 children: "|"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/type-writer/index.tsx",
-                lineNumber: 9,
-                columnNumber: 37
+                lineNumber: 10,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
@@ -841,8 +844,9 @@ const TypeWriter = ()=>{
         columnNumber: 9
     }, this);
 };
-_s(TypeWriter, "QrUkOxnIR4tdyVWe3rWGRItOupQ=", false, function() {
+_s(TypeWriter, "/0+Ki5gJCggsoZUvFmGhuJsZpHY=", false, function() {
     return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$type$2d$writer$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$type$2d$writer$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"]
     ];
 });

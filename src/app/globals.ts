@@ -28,7 +28,6 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
 	color: white;
     width: 100%;
-	font-family: Arial;
 	background-color: rgb(13, 13, 13);
   }
   
