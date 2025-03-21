@@ -1,16 +1,24 @@
-# Usa a imagem oficial do AWS Lambda para Node.js 18
-FROM public.ecr.aws/lambda/nodejs:18
+# 🔹 Etapa 1: Construção do Next.js
+FROM node:18 AS builder
+WORKDIR /app
 
-# Define o diretório de trabalho
-WORKDIR /var/task
-
-# Copia os arquivos necessários
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Copia todo o build standalone do Next.js
-COPY .next/standalone ./
-COPY .next/static .next/static
+COPY . .
+RUN npm run build
 
-# Define o comando correto para rodar o Next.js
+# 🔹 Etapa 2: Configuração para rodar no Lambda
+FROM public.ecr.aws/lambda/nodejs:18
+WORKDIR /var/task
+
+# Copia os arquivos do Next.js standalone
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/static ./.next/static
+
+# 🔹 REMOVE O ENTRYPOINT padrão do AWS Lambda
+ENTRYPOINT []
+
+# 🔹 Define o comando correto para rodar Next.js standalone
 CMD ["node", "server.js"]
