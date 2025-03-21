@@ -28,7 +28,7 @@ jobs:
 
             - name: Build Docker image
               run: |
-                  docker build -t arthurscheffer.com .
+                  docker build --platform=linux/arm64 -t arthurscheffer.com .
 
             - name: Tag Docker image
               run: |
