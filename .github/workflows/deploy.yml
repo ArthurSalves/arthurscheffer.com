@@ -41,5 +41,5 @@ jobs:
             - name: Update AWS Lambda function to use latest image
               run: |
                   aws lambda update-function-code \
-                    --function-name nome-da-sua-lambda \
+                    --function-name arthurscheffer \
                     --image-uri ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/arthurscheffer.com:latest
