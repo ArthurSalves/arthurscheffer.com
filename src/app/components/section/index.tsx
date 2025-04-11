@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react'
 import { SectionStyled } from './styles'
 
 interface Props {
-    children: any
+    children: React.ReactNode
     title: string
     id: string
 }

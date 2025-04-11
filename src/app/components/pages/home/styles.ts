@@ -23,7 +23,8 @@ export const AboutContainerStyled = styled.div.attrs<AboutContainerStyledProps>(
         backgroundImage: `linear-gradient(${props.angle}deg, rgb(255, 255, 247) 1%, rgb(114, 114, 103) 107%)`
     }
 }))<AboutContainerStyledProps>`
-    margin-top: 35px;
+    margin-top: 70px;
+    margin-bottom: 140px;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -42,7 +43,7 @@ export const TitleAboutStyled = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 2rem;
     word-break: keep-all;
     @media (max-width: 768px) {
         text-align: left;

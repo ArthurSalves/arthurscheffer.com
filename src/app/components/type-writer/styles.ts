@@ -15,7 +15,7 @@ const typewriterCursor = keyframes`
 `
 
 export const TypeWriterStyled = styled.div`
-    display: flex;
+    display: block;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,6 @@ export const TypeWriterStyled = styled.div`
     }
 `
 export const BlinkingPipeStyled = styled.span<TypeWriterStyled>`
-    display: inline-block;
     opacity: 1;
     animation-name: ${props => (props.isTyping ? null : typewriterCursor)};
     animation-duration: 1s;
