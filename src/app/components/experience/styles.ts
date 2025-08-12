@@ -13,6 +13,7 @@ export const ExperienceCardStyled = styled.div`
 export const SkillsContainerStyled = styled.div`
     display: flex;
     flex-direction: row;
+    font-size: 1.1rem;
 `
 
 export const ExperinceDescriptionContainerStyled = styled.div`
@@ -20,13 +21,35 @@ export const ExperinceDescriptionContainerStyled = styled.div`
     flex-direction: column;
 
     > strong {
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 10px;
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    > p {
+        display: none;
+        font-size: 15px;
+
+        @media (max-width: 768px) {
+            display: initial;
+        }
+    }
+
+    > span {
+        font-size: 15px;
+        @media (max-width: 768px) {
+            font-size: 17px;
+        }
     }
 
     > article {
         font-size: 1.25rem;
         margin-top: 20px;
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
         > p {
             margin-bottom: 20px;
 
@@ -42,6 +65,9 @@ export const ExperinceDescriptionContainerStyled = styled.div`
             display: list-item;
             text-align: -webkit-match-parent;
             unicode-bidi: isolate;
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
         }
     }
 `

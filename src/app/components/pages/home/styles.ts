@@ -23,7 +23,7 @@ export const AboutContainerStyled = styled.div.attrs<AboutContainerStyledProps>(
         backgroundImage: `linear-gradient(${props.angle}deg, rgb(255, 255, 247) 1%, rgb(114, 114, 103) 107%)`
     }
 }))<AboutContainerStyledProps>`
-    margin-top: 70px;
+    margin-top: 40px;
     margin-bottom: 140px;
     width: 60%;
     display: flex;
@@ -80,8 +80,8 @@ export const TextContainerStyled = styled.div`
 
 export const DescriptionAboutSytled = styled.h1`
     text-align: center;
-    margin-top: 60px;
-    font-size: 24px;
+    margin-top: 40px;
+    font-size: 20px;
     @media (max-width: 768px) {
         align-items: flex-start;
         text-align: left;

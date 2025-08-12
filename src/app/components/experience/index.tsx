@@ -3,6 +3,7 @@ import { ExperienceCardStyled, ExperinceDescriptionContainerStyled, SkillsContai
 import TimeLine from './time-line'
 import { MDX } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
+import { format } from 'date-fns/fp/format'
 
 interface Props {
     companyName: string
@@ -24,6 +25,8 @@ const ExperienceCard: FunctionComponent<Props> = ({
     skills
 }) => {
     const Content = useMDXComponent(description.code)
+    const formatedStartedAt = format('MMM yyyy', new Date(startedAt))
+    const formatedEndeddAt = endedAt ? format('MMM yyyy', new Date(endedAt)) : 'Present'
     return (
         <ExperienceCardStyled>
             <TimeLine startedAt={startedAt} endedAt={endedAt}></TimeLine>
@@ -32,6 +35,9 @@ const ExperienceCard: FunctionComponent<Props> = ({
                 <span>
                     {companyName}, {employmentType}
                 </span>
+                <p>
+                    {formatedStartedAt} - {formatedEndeddAt}
+                </p>
 
                 <article>
                     <Content />

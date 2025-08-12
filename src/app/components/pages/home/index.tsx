@@ -14,6 +14,7 @@ import { currentExperience } from '@/content/experience'
 import ExperienceCard from '../../experience'
 import TypeWriter from '../../type-writer'
 import Link from 'next/link'
+import ContactCard from '../../footer'
 
 const HomeScreen: FunctionComponent = () => {
     const angle = useScrollAngle(214, 200)
@@ -34,29 +35,26 @@ const HomeScreen: FunctionComponent = () => {
                     <TitleAboutStyled>
                         <TitleAboutStyled>Hey </TitleAboutStyled>
                         <Image src="/images/waving-hand.gif" width={50} height={50} alt="gif of a hand waving" />
-                        <TitleAboutStyled>, Im Arthur</TitleAboutStyled>
+                        <TitleAboutStyled>, I'm Arthur</TitleAboutStyled>
                     </TitleAboutStyled>
                     <TypeWriter />
                     <DescriptionAboutSytled>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos maiores non maxime voluptas,
-                        ratione fuga soluta reiciendis dignissimos modi veniam corporis, quasi, iste eligendi natus
-                        sequi est recusandae hic earum.
+                        I’m a software engineer with a degree in Systems Analysis and Development and 5 years of
+                        experience delivering clean, scalable, and high-performance applications. I’ve built intuitive
+                        front-end interfaces with modern frameworks and developed robust back-end systems and APIs. My
+                        work has consistently improved delivery speed, code maintainability, and user experience,
+                        leveraging best practices in architecture and DevOps.
                     </DescriptionAboutSytled>
                 </TextContainerStyled>
             </AboutContainerStyled>
 
             <Section id="experience" title="Experience">
                 <ExperienceCard {...currentExperience} description={currentExperience?.body} />
-                <Link href="/experience"> see more</Link>
+                <Link href="/experience"> See more</Link>
             </Section>
 
             <Section id="posts" title="Posts">
                 Comming Soon...
-            </Section>
-
-            <Section id="contact" title="Contact">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vel ipsa. Fugit, in. Totam ullam et
-                magni tempore quam delectus voluptatum. Possimus qui fugit illum laborum quis optio recusandae. Ea!
             </Section>
         </>
     )

@@ -2,6 +2,7 @@ import { Poppins } from 'next/font/google'
 import { GlobalStyle, LayoutStyled } from './globals'
 import StyledComponentsRegistry from '@/app/components/layout'
 import NavBar from './components/nav-bar'
+import Footer from './components/footer'
 
 const poppins = Poppins({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                         <NavBar />
                         <GlobalStyle />
                         {children}
+                        <Footer />
                     </LayoutStyled>
                 </StyledComponentsRegistry>
             </body>
