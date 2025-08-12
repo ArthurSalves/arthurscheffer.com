@@ -14,7 +14,6 @@ import { currentExperience } from '@/content/experience'
 import ExperienceCard from '../../experience'
 import TypeWriter from '../../type-writer'
 import Link from 'next/link'
-import ContactCard from '../../footer'
 
 const HomeScreen: FunctionComponent = () => {
     const angle = useScrollAngle(214, 200)
@@ -35,7 +34,7 @@ const HomeScreen: FunctionComponent = () => {
                     <TitleAboutStyled>
                         <TitleAboutStyled>Hey </TitleAboutStyled>
                         <Image src="/images/waving-hand.gif" width={50} height={50} alt="gif of a hand waving" />
-                        <TitleAboutStyled>, I'm Arthur</TitleAboutStyled>
+                        <TitleAboutStyled>, I&apos;m Arthur</TitleAboutStyled>
                     </TitleAboutStyled>
                     <TypeWriter />
                     <DescriptionAboutSytled>

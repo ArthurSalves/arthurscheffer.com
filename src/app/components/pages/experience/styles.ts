@@ -18,9 +18,7 @@ export const ImageContainerStyled = styled.div`
     }
 `
 
-export const AboutContainerStyled = styled.div.attrs<AboutContainerStyledProps>(
-    props => ({})
-)<AboutContainerStyledProps>`
+export const AboutContainerStyled = styled.div<AboutContainerStyledProps>`
     margin-top: 35px;
     width: 60%;
     display: flex;
