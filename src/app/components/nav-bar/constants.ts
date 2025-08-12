@@ -1,18 +1,17 @@
 export const navBarLinks = [
     {
         label: 'About',
-        href: '#about'
+        href: '#about',
+        route: '/'
     },
     {
         label: 'Experience',
-        href: '#experience'
+        href: '#experience',
+        route: '/experience'
     },
     {
         label: 'Posts',
-        href: '#posts'
-    },
-    {
-        label: 'Contact',
-        href: '#contact'
+        href: '#posts',
+        route: '/posts'
     }
 ]

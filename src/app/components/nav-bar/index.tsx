@@ -3,22 +3,26 @@
 import { NavBarContainerStyled, NavBarContentStyled, NavBarItemStyled } from './styles'
 import React from 'react'
 import { navBarLinks } from './constants'
+import { useRouter } from 'next/navigation'
 
 const NavBar: React.FC = () => {
+    const router = useRouter()
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        e.preventDefault()
-        console.log('id:', e.currentTarget.href.replace(/.*\#/, ''))
+        if (navBarLinks) e.preventDefault()
+        console.log('id:', e.currentTarget.href)
         const element = document.getElementById(e.currentTarget.href.replace(/.*\#/, ''))
 
-        if (!element) return
+        if (!element) {
+            router.push('/')
+        } else {
+            const approximateHeaderHeight = 150
+            const targetElementTop = element?.getBoundingClientRect().top
 
-        const approximateHeaderHeight = 150
-        const targetElementTop = element?.getBoundingClientRect().top
-
-        window.scrollTo({
-            top: targetElementTop + window.scrollY - approximateHeaderHeight,
-            behavior: 'smooth'
-        })
+            window.scrollTo({
+                top: targetElementTop + window.scrollY - approximateHeaderHeight,
+                behavior: 'smooth'
+            })
+        }
     }
 
     return (
