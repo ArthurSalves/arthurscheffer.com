@@ -7,7 +7,7 @@ const Footer: FunctionComponent = () => {
         <FooterStyled>
             <p>© 2025 All Rights Reserved. Design & Developed with 🧡</p>
             <div>
-                <a>
+                <a href="mailto:arthurschefferalves@hotmail.com" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/icons/email.svg"
                         width={30}
