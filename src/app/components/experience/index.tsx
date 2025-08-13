@@ -1,3 +1,4 @@
+'use client'
 import { FunctionComponent } from 'react'
 import { ExperienceCardStyled, ExperinceDescriptionContainerStyled, SkillsContainerStyled } from './styles'
 import TimeLine from './time-line'

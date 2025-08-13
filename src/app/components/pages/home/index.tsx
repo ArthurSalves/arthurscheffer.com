@@ -10,8 +10,8 @@ import {
 } from './styles'
 import { useScrollAngle } from '@/hooks/scroll-angle'
 import Section from '../../section'
-// import { currentExperience } from '@/content/experience'
-// import ExperienceCard from '../../experience'
+import { currentExperience } from '@/content/experience'
+import ExperienceCard from '../../experience'
 import TypeWriter from '../../type-writer'
 import Link from 'next/link'
 
@@ -54,7 +54,7 @@ const HomeScreen: FunctionComponent = () => {
             </AboutContainerStyled>
 
             <Section id="experience" title="Experience">
-                {/* <ExperienceCard {...currentExperience} description={currentExperience?.body} /> */}
+                <ExperienceCard {...currentExperience} description={currentExperience?.body} />
                 <Link href="/experience" aria-label="See all my experiences">
                     See all my experiences &rarr;
                 </Link>
