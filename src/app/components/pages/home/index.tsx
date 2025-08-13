@@ -1,6 +1,6 @@
 'use client'
 import { FunctionComponent } from 'react'
-//import { Image } from '../../image'
+import { Image } from '../../image'
 import {
     AboutContainerStyled,
     DescriptionAboutSytled,
@@ -12,7 +12,7 @@ import { useScrollAngle } from '@/hooks/scroll-angle'
 import Section from '../../section'
 import { currentExperience } from '@/content/experience'
 import ExperienceCard from '../../experience'
-//import TypeWriter from '../../type-writer'
+import TypeWriter from '../../type-writer'
 import Link from 'next/link'
 
 const HomeScreen: FunctionComponent = () => {
@@ -22,27 +22,27 @@ const HomeScreen: FunctionComponent = () => {
         <>
             <AboutContainerStyled angle={angle} id="about">
                 <ImageContainerStyled>
-                    {/* <Image
+                    <Image
                         src="/images/profile-photo.jpg"
                         width={225}
                         height={225}
                         alt="Arthur Scheffer's picture with a orange background"
-                    /> */}
+                    />
                 </ImageContainerStyled>
 
                 <TextContainerStyled>
                     <TitleAboutStyled>
                         <TitleAboutStyled>Hey </TitleAboutStyled>
-                        {/* <Image
+                        <Image
                             src="/images/waving-hand.gif"
                             width={50}
                             height={50}
                             alt="gif of a hand waving"
                             unoptimized
-                        /> */}
+                        />
                         <TitleAboutStyled>, I&apos;m Arthur</TitleAboutStyled>
                     </TitleAboutStyled>
-                    {/* <TypeWriter /> */}
+                    <TypeWriter />
                     <DescriptionAboutSytled>
                         I’m a software engineer with a degree in Systems Analysis and Development and 5 years of
                         experience delivering clean, scalable, and high-performance applications. I’ve built intuitive
