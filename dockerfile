@@ -8,7 +8,7 @@ RUN npm ci && npm run build
 
 FROM public.ecr.aws/docker/library/node:20.9.0-slim AS runner
 # install aws-lambda-adapter
-#COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.7.2 /lambda-adapter /opt/extensions/lambda-adapter
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.7.2 /lambda-adapter /opt/extensions/lambda-adapter
 # expose port 3000 and set env variables
 ENV PORT=3000 NODE_ENV=production
 ENV AWS_LWA_ENABLE_COMPRESSION=true
