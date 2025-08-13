@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 import { EndedAtStyled, StartedAtStyled, TimeLineStyed } from './styles'
-import { format } from 'date-fns/fp/format'
+import { format } from 'date-fns'
 
 interface Props {
     startedAt: string
@@ -8,9 +8,8 @@ interface Props {
 }
 
 const TimeLine: FunctionComponent<Props> = ({ startedAt, endedAt }) => {
-    
-    const formatedStartedAt = startedAt ? format('MMM yyyy', new Date(startedAt)) : ''
-    const formatedEndeddAt = endedAt ? format('MMM yyyy', new Date(endedAt)) : 'Present'
+    const formatedStartedAt = startedAt ? format(new Date(startedAt), 'MMM yyyy') : ''
+    const formatedEndeddAt = endedAt ? format(new Date(endedAt), 'MMM yyyy') : 'Present'
     return (
         <TimeLineStyed>
             <EndedAtStyled>{formatedEndeddAt}</EndedAtStyled>
