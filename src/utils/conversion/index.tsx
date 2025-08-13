@@ -1,3 +1,3 @@
 export function stringToBase64(str: string) {
-    return false ? Buffer.from(str).toString('base64') : window.btoa(str)
+    return true ? Buffer.from(str).toString('base64') : window.btoa(str)
 }
