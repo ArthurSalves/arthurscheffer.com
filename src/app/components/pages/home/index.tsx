@@ -10,10 +10,11 @@ import {
 } from './styles'
 import { useScrollAngle } from '@/hooks/scroll-angle'
 import Section from '../../section'
-import { currentExperience } from '@/content/experience'
-import ExperienceCard from '../../experience'
+// import { currentExperience } from '@/content/experience'
+// import ExperienceCard from '../../experience'
+// import Link from 'next/link'
 import TypeWriter from '../../type-writer'
-import Link from 'next/link'
+
 
 const HomeScreen: FunctionComponent = () => {
     const angle = useScrollAngle(214, 200)
@@ -53,12 +54,12 @@ const HomeScreen: FunctionComponent = () => {
                 </TextContainerStyled>
             </AboutContainerStyled>
 
-            <Section id="experience" title="Experience">
+            {/* <Section id="experience" title="Experience">
                 <ExperienceCard {...currentExperience} description={currentExperience?.body} />
                 <Link href="/experience" aria-label="See all my experiences">
                     See all my experiences &rarr;
                 </Link>
-            </Section>
+            </Section> */}
 
             <Section id="posts" title="Posts">
                 Comming Soon...
