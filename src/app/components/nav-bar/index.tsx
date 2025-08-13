@@ -9,7 +9,6 @@ const NavBar: React.FC = () => {
     const router = useRouter()
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         if (navBarLinks) e.preventDefault()
-        console.log('id:', e.currentTarget.href)
         const element = document.getElementById(e.currentTarget.href.replace(/.*\#/, ''))
 
         if (!element) {

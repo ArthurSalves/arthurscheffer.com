@@ -17,7 +17,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html className={poppins.className}>
+        <html lang="en" className={poppins.className}>
             <body>
                 <StyledComponentsRegistry>
                     <LayoutStyled>
