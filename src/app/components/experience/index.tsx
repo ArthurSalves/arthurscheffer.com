@@ -30,7 +30,7 @@ const ExperienceCard: FunctionComponent<Props> = ({
     // const formatedEndeddAt = endedAt && !isServerSide() ? format('MMM yyyy', new Date(endedAt)) : 'Present'
     return (
         <ExperienceCardStyled>
-            {startedAt ? <TimeLine startedAt={startedAt} endedAt={endedAt} /> : null}
+            <TimeLine startedAt={startedAt} endedAt={endedAt} />
             <ExperinceDescriptionContainerStyled>
                 <strong>{position}</strong>
                 <span>
