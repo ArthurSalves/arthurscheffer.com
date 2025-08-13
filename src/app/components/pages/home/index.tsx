@@ -12,7 +12,7 @@ import { useScrollAngle } from '@/hooks/scroll-angle'
 import Section from '../../section'
 import { currentExperience } from '@/content/experience'
 import ExperienceCard from '../../experience'
-import TypeWriter from '../../type-writer'
+//import TypeWriter from '../../type-writer'
 import Link from 'next/link'
 
 const HomeScreen: FunctionComponent = () => {
