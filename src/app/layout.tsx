@@ -17,8 +17,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html suppressHydrationWarning lang="en" className={poppins.className}>
-            <body>
+        <html suppressHydrationWarning={true} lang="en" className={poppins.className}>
+            <body suppressHydrationWarning={true}>
                 <StyledComponentsRegistry>
                     <LayoutStyled>
                         <NavBar />
