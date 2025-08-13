@@ -8,7 +8,7 @@ import {
     TextContainerStyled,
     TitleAboutStyled
 } from './styles'
-import { useScrollAngle } from '@/hooks/scroll-angle'
+//import { useScrollAngle } from '@/hooks/scroll-angle'
 import Section from '../../section'
 import { currentExperience } from '@/content/experience'
 import ExperienceCard from '../../experience'
@@ -16,11 +16,11 @@ import TypeWriter from '../../type-writer'
 import Link from 'next/link'
 
 const HomeScreen: FunctionComponent = () => {
-    const angle = useScrollAngle(214, 200)
+    //const angle = useScrollAngle(214, 200)
 
     return (
         <>
-            <AboutContainerStyled angle={angle} id="about">
+            <AboutContainerStyled angle={200} id="about">
                 <ImageContainerStyled>
                     <Image
                         src="/images/profile-photo.jpg"
