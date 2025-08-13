@@ -7,16 +7,10 @@ interface Props {
     endedAt?: string
 }
 
-function safeFormat(dateString: string, fallback: string) {
-    const date = new Date(dateString)
-    if (isNaN(date.getTime())) return fallback
-    return format('MMM yyyy', date)
-}
-
 const TimeLine: FunctionComponent<Props> = ({ startedAt, endedAt }) => {
-    const formatedStartedAt = safeFormat(startedAt, startedAt)
-    const formatedEndeddAt = endedAt ? safeFormat(endedAt, endedAt) : 'Present'
-
+    
+    const formatedStartedAt = startedAt ? format('MMM yyyy', new Date(startedAt)) : ''
+    const formatedEndeddAt = endedAt ? format('MMM yyyy', new Date(endedAt)) : 'Present'
     return (
         <TimeLineStyed>
             <EndedAtStyled>{formatedEndeddAt}</EndedAtStyled>
