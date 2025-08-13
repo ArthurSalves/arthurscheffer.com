@@ -1,11 +1,10 @@
-'use client'
 import { FunctionComponent } from 'react'
 import { ExperienceCardStyled, ExperinceDescriptionContainerStyled, SkillsContainerStyled } from './styles'
 import TimeLine from './time-line'
 import { MDX } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
-import { format } from 'date-fns/fp/format'
-import { isServerSide } from '@/utils/runtime'
+// import { format } from 'date-fns/fp/format'
+// import { isServerSide } from '@/utils/runtime'
 
 interface Props {
     companyName: string
@@ -27,8 +26,8 @@ const ExperienceCard: FunctionComponent<Props> = ({
     skills
 }) => {
     const Content = useMDXComponent(description.code)
-    const formatedStartedAt = !isServerSide() && format('MMM yyyy', new Date(startedAt))
-    const formatedEndeddAt = endedAt && !isServerSide() ? format('MMM yyyy', new Date(endedAt)) : 'Present'
+    // const formatedStartedAt = !isServerSide() && format('MMM yyyy', new Date(startedAt))
+    // const formatedEndeddAt = endedAt && !isServerSide() ? format('MMM yyyy', new Date(endedAt)) : 'Present'
     return (
         <ExperienceCardStyled>
             <TimeLine startedAt={startedAt} endedAt={endedAt}></TimeLine>
@@ -38,7 +37,7 @@ const ExperienceCard: FunctionComponent<Props> = ({
                     {companyName}, {employmentType}
                 </span>
                 <p>
-                    {formatedStartedAt} - {formatedEndeddAt}
+                    {'teste'} - {'teste'}
                 </p>
 
                 <article>
