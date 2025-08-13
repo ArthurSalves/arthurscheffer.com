@@ -10,7 +10,6 @@ const shimmer = `
 
 const MINIMUM_IMAGE_SIZE_WITH_BLUR = 40
 
-
 function BaseImage(props: ImageProps) {
     const { width, height, ...otherProps } = props
 
