@@ -42,7 +42,7 @@ const HomeScreen: FunctionComponent = () => {
                         /> */}
                         <TitleAboutStyled>, I&apos;m Arthur</TitleAboutStyled>
                     </TitleAboutStyled>
-                    <TypeWriter />
+                    {/* <TypeWriter /> */}
                     <DescriptionAboutSytled>
                         I’m a software engineer with a degree in Systems Analysis and Development and 5 years of
                         experience delivering clean, scalable, and high-performance applications. I’ve built intuitive
