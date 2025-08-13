@@ -20,7 +20,7 @@ function BaseImage(props: ImageProps) {
 
         return {
             placeholder: 'blur',
-            blurDataURL: `data:image/svg+xml;base64,${stringToBase64(shimmer)}`
+            blurDataURL: `data:image/svg+xml;base64,teste`
         }
     }, [width, height])
 
