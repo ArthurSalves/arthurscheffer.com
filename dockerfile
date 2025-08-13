@@ -23,5 +23,5 @@ COPY --from=builder /app/run.sh ./run.sh
 RUN ln -s /tmp/cache ./.next/cache
 
 # configure the run command to start the server
-#RUN ["chmod", "+x", "./run.sh"]
+RUN ["chmod", "+x", "./run.sh"]
 CMD exec ./run.sh
