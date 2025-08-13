@@ -7,7 +7,7 @@ interface Props {
     endedAt?: string
 }
 
-const TimeLine: FunctionComponent<Props> = ({ startedAt, endedAt }) => {
+const TimeLine: FunctionComponent<Props> = () => {
     // const formatedStartedAt = format('MMM yyyy', new Date(startedAt))
     // const formatedEndeddAt = endedAt ? format('MMM yyyy', new Date(endedAt)) : 'Present'
     return (
