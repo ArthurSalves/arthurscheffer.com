@@ -1,6 +1,6 @@
 'use client'
 import { FunctionComponent } from 'react'
-import { Image } from '../../image'
+//import { Image } from '../../image'
 import {
     AboutContainerStyled,
     DescriptionAboutSytled,
