@@ -42,7 +42,7 @@ export const LogoStyled = styled.img`
 export const NavBarItemStyled = styled.a`
     text-align: center;
     text-decoration: none;
-    color: #7a7a7a;
+    color: rgb(135, 135, 135);
     cursor: pointer;
     transition: color 0.4s;
     font-size: 16px;

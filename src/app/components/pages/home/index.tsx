@@ -33,7 +33,13 @@ const HomeScreen: FunctionComponent = () => {
                 <TextContainerStyled>
                     <TitleAboutStyled>
                         <TitleAboutStyled>Hey </TitleAboutStyled>
-                        <Image src="/images/waving-hand.gif" width={50} height={50} alt="gif of a hand waving" />
+                        <Image
+                            src="/images/waving-hand.gif"
+                            width={50}
+                            height={50}
+                            alt="gif of a hand waving"
+                            unoptimized
+                        />
                         <TitleAboutStyled>, I&apos;m Arthur</TitleAboutStyled>
                     </TitleAboutStyled>
                     <TypeWriter />
@@ -49,7 +55,9 @@ const HomeScreen: FunctionComponent = () => {
 
             <Section id="experience" title="Experience">
                 <ExperienceCard {...currentExperience} description={currentExperience?.body} />
-                <Link href="/experience"> See more</Link>
+                <Link href="/experience" aria-label="See all my experiences">
+                    See all my experiences &rarr;
+                </Link>
             </Section>
 
             <Section id="posts" title="Posts">
