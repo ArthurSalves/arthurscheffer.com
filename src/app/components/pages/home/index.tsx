@@ -22,24 +22,24 @@ const HomeScreen: FunctionComponent = () => {
         <>
             <AboutContainerStyled angle={angle} id="about">
                 <ImageContainerStyled>
-                    <Image
+                    {/* <Image
                         src="/images/profile-photo.jpg"
                         width={225}
                         height={225}
                         alt="Arthur Scheffer's picture with a orange background"
-                    />
+                    /> */}
                 </ImageContainerStyled>
 
                 <TextContainerStyled>
                     <TitleAboutStyled>
                         <TitleAboutStyled>Hey </TitleAboutStyled>
-                        <Image
+                        {/* <Image
                             src="/images/waving-hand.gif"
                             width={50}
                             height={50}
                             alt="gif of a hand waving"
                             unoptimized
-                        />
+                        /> */}
                         <TitleAboutStyled>, I&apos;m Arthur</TitleAboutStyled>
                     </TitleAboutStyled>
                     <TypeWriter />
