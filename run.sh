@@ -1,5 +1,5 @@
-#!/bin/bash -x
+!/bin/bash -x
 
-#[ ! -d '/tmp/cache' ] && mkdir -p /tmp/cache
+[ ! -d '/tmp/cache' ] && mkdir -p /tmp/cache
 
-exec node server.js
+exec npm start
