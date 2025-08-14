@@ -1,8 +1,9 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 import { ExperienceCardStyled, ExperinceDescriptionContainerStyled, SkillsContainerStyled } from './styles'
 import TimeLine from './time-line'
 import { MDX } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
+import { format } from 'date-fns'
 // import { format } from 'date-fns/fp/format'
 // import { isServerSide } from '@/utils/runtime'
 
@@ -26,18 +27,23 @@ const ExperienceCard: FunctionComponent<Props> = ({
     skills
 }) => {
     const Content = useMDXComponent(description.code)
-    // const formatedStartedAt = !isServerSide() && format('MMM yyyy', new Date(startedAt))
-    // const formatedEndeddAt = endedAt && !isServerSide() ? format('MMM yyyy', new Date(endedAt)) : 'Present'
+    const [formatedStartedAt, setFormatedStartedAt] = useState<string>('')
+    const [formatedEndeddAt, setFormatedEndeddAt] = useState<string>('')
+    useEffect(() => {
+        setFormatedStartedAt(format(new Date(startedAt), 'MMM yyyy'))
+        setFormatedEndeddAt(endedAt ? format(new Date(endedAt), 'MMM yyyy') : 'Present')
+    }, [])
+
     return (
         <ExperienceCardStyled>
-            <TimeLine startedAt={startedAt} endedAt={endedAt} />
+            <TimeLine startedAt={formatedStartedAt} endedAt={formatedEndeddAt} />
             <ExperinceDescriptionContainerStyled>
                 <strong>{position}</strong>
                 <span>
                     {companyName}, {employmentType}
                 </span>
                 <p>
-                    {'teste'} - {'teste'}
+                    {formatedStartedAt} - {formatedEndeddAt}
                 </p>
 
                 <article>
