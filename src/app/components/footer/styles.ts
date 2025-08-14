@@ -21,4 +21,10 @@ export const FooterStyled = styled.footer`
             width: 30%;
         }
     }
+
+    > p {
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
 `

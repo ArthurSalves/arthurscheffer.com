@@ -1,17 +1,17 @@
 'use client'
 import { FunctionComponent } from 'react'
-// import Section from '../../section'
-// import { experiences } from '@/content/experience'
-// import ExperienceCard from '../../experience'
+import Section from '../../section'
+import { experiences } from '@/content/experience'
+import ExperienceCard from '../../experience'
 
 const ExperienceScreen: FunctionComponent = () => {
     return (
         <>
-            {/* <Section id="experience" title="Experience">
+            <Section id="experience" title="Experience">
                 {experiences.map((experience, index) => (
                     <ExperienceCard key={index} {...experience} description={experience?.body} />
                 ))}
-            </Section> */}
+            </Section>
         </>
     )
 }
