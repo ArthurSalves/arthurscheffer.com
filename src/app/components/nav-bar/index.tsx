@@ -10,9 +10,9 @@ const NavBar: React.FC = () => {
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         if (navBarLinks) e.preventDefault()
         const element = document.getElementById(e.currentTarget.href.replace(/.*\#/, ''))
-
+        console.log(e)
         if (!element) {
-            router.push('/')
+            router.push(`/#${e.currentTarget.href.replace(/.*\#/, '')}`)
         } else {
             const approximateHeaderHeight = 150
             const targetElementTop = element?.getBoundingClientRect().top
@@ -21,6 +21,7 @@ const NavBar: React.FC = () => {
                 top: targetElementTop + window.scrollY - approximateHeaderHeight,
                 behavior: 'smooth'
             })
+            return
         }
     }
 
