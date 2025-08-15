@@ -9,14 +9,17 @@ const NavBar: React.FC = () => {
     const router = useRouter()
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         if (navBarLinks) e.preventDefault()
-        const elementId = e.currentTarget.href.replace(/.*\#/, '')
-        const element = document.getElementById(elementId)
-        console.log(elementId)
+        const elementId: string = e.currentTarget.href.replace(/.*\#/, '')
+        const element: HTMLElement | null = document.getElementById(elementId)
         if (!element) {
-            elementId !== 'about' ? router.push(`/#${e.currentTarget.href.replace(/.*\#/, '')}`) : router.push('/')
+            if (elementId !== 'about') {
+                router.push(`/#${e.currentTarget.href.replace(/.*\#/, '')}`)
+            } else {
+                router.push('/')
+            }
         } else {
-            const approximateHeaderHeight = 150
-            const targetElementTop = element?.getBoundingClientRect().top
+            const approximateHeaderHeight: number = 150
+            const targetElementTop: number = element?.getBoundingClientRect().top
 
             window.scrollTo({
                 top: targetElementTop + window.scrollY - approximateHeaderHeight,
