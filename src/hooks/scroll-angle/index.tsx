@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-// Definindo os tipos das propriedades do hook
 export function useScrollAngle(initialAngle: number = 214, factor: number = 50): number {
     const [angle, setAngle] = useState<number>(initialAngle)
 

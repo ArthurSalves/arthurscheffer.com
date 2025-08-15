@@ -4,8 +4,6 @@ import TimeLine from './time-line'
 import { MDX } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer2/hooks'
 import { format } from 'date-fns'
-// import { format } from 'date-fns/fp/format'
-// import { isServerSide } from '@/utils/runtime'
 
 interface Props {
     companyName: string
